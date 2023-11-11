@@ -1,0 +1,62 @@
+/* basic styling so we can
+   see what's going on */
+
+   * { box-sizing: border-box; }
+
+   body {
+     margin: 0;
+     min-height: 100vh;
+   }
+   
+   header,
+   .main-content,
+   .sidebar,
+   footer {
+     padding: 2em;
+   }
+   
+   header { background: #41D3BD; }
+   .main-content { background: #DE6449;}
+   .sidebar { background: #407899;}
+   footer { background: #694D75;}
+   
+   
+   /* ======================
+      Demo stuff starts here 
+      ========================*/
+   body{
+    display: grid;
+    grid-template-columns: 1.5em 1fr 1.5em;
+    grid-template-areas: 
+        "h h h"
+        ". m ."
+        ". s ."
+        "f f f";
+   }
+
+   @media only screen and (min-width: 860px){
+    body{
+        display: grid;
+        grid-template-columns: 1.5em minmax(450px, 550px) 1fr 1.5em;
+        grid-template-areas: 
+            "h h h h"
+            ". m s ."
+            "f f f f"                ;
+       }
+    
+   }
+   header{
+    grid-area: h;
+   }
+
+   .main-content{
+    grid-area: m;
+   }
+
+   .sidebar{
+    grid-area: s;
+   }
+
+   footer{
+    grid-area: f;
+   }
